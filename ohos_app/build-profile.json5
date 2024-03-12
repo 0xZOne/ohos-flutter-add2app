@@ -1,0 +1,69 @@
+/*
+* Copyright (c) 2023 Hunan OpenValley Digital Industry Development Co., Ltd.
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*     http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+
+{
+  "app": {
+    "signingConfigs": [
+      {
+        "name": "default",
+        "type": "HarmonyOS",
+        "material": {
+          "certpath": "/Users/zero/.ohos/config/default_ohos_app_ni4BKwMMU0eRbaOCSnvDX1yMAvoqEL0f-lvBWg2_GR0=.cer",
+          "storePassword": "0000001B3CCF033248E0E42CABE2D0806CF7FDBF00E29C39F650CAF6A22A6EE81BF91743D982B3504CD40B",
+          "keyAlias": "debugKey",
+          "keyPassword": "0000001B7F4429744FDC82E905A0852B606CD81773E930F70455773D79601FA438B5CF2817BF7506DD4480",
+          "profile": "/Users/zero/.ohos/config/default_ohos_app_ni4BKwMMU0eRbaOCSnvDX1yMAvoqEL0f-lvBWg2_GR0=.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "/Users/zero/.ohos/config/default_ohos_app_ni4BKwMMU0eRbaOCSnvDX1yMAvoqEL0f-lvBWg2_GR0=.p12"
+        }
+      }
+    ],
+    "products": [
+      {
+        "name": "default",
+        "signingConfig": "default",
+        "compileSdkVersion": "4.1.0(11)",
+        "compatibleSdkVersion": "4.1.0(11)",
+        "runtimeOS": "HarmonyOS",
+      }
+    ]
+  },
+  "modules": [
+    {
+      "name": "entry",
+      "srcPath": "./entry",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "flutter_module",
+      "srcPath": "./flutter_module",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    }
+  ]
+}
