@@ -13,26 +13,43 @@
 * limitations under the License.
 */
 
-import common from '@ohos.app.ability.common';
-import { FlutterPage } from '@ohos/flutter_module'
+import hilog from '@ohos.hilog';
+import { FlutterBoostEntry, FlutterView, FlutterPage } from '@ohos/flutter_module';
 
-let storage = LocalStorage.getShared()
-const EVENT_BACK_PRESS = 'EVENT_BACK_PRESS'
+import router from '@ohos.router';
 
-@Entry(storage)
+const TAG: string = "xlog-FirstFlutterPage";
+@Entry
 @Component
 struct FirstFlutterPage {
-  private context = getContext(this) as common.UIAbilityContext
-  @LocalStorageLink('viewId') viewId: string = "";
+  private flutterEntry: FlutterBoostEntry | null = null;
+  private flutterView?: FlutterView
 
-  build() {
-    Column() {
-      FlutterPage({ viewId: this.viewId })
-    }
+  aboutToAppear() {
+    this.flutterEntry = new FlutterBoostEntry(getContext(this), router.getParams());
+    this.flutterEntry.aboutToAppear();
+    this.flutterView = this.flutterEntry.getFlutterView();
+    hilog.info(0x0000, TAG, "Index aboutToAppear===");
   }
 
-  onBackPress(): boolean {
-    this.context.eventHub.emit(EVENT_BACK_PRESS)
-    return true
+  aboutToDisappear() {
+    hilog.info(0x0000, TAG, "Index aboutToDisappear===");
+    this.flutterEntry?.aboutToDisappear()
+  }
+
+  onPageShow() {
+    hilog.info(0x0000, TAG, "Index onPageShow===");
+    this.flutterEntry?.onPageShow()
+  }
+  // 1
+  onPageHide() {
+    hilog.info(0x0000, TAG, "Index onPageHide===");
+    this.flutterEntry?.onPageHide()
+  }
+
+  build() {
+    Stack() {
+      FlutterPage({ viewId: this.flutterView?.getId() })
+    }
   }
 }

@@ -1,6 +1,6 @@
 {
   "app": {
-    "bundleName": "com.example.add2app",
+    "bundleName": "com.example.flutter_module",
     "vendor": "example",
     "versionCode": 1000000,
     "versionName": "1.0.0",

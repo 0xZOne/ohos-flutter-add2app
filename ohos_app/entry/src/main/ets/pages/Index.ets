@@ -1,7 +1,8 @@
 import { hilog } from '@kit.PerformanceAnalysisKit';
+import { FlutterBoost } from '@ohos/flutter_module';
 import router from '@ohos.router';
 
-const TAG = "Index"
+const TAG: string = "xlog-Index";
 @Entry
 @Component
 struct Index {
@@ -20,7 +21,8 @@ struct Index {
           .margin({ bottom: 10 })
           .onClick(() => {
             try {
-              router.pushUrl({ url: 'pages/FirstFlutterPage' })
+              // router.pushUrl({ url: 'pages/FirstFlutterPage' })
+              FlutterBoost.getInstance().open('flutterPage', {})
             } catch (err) {
               hilog.info(0x0000, TAG, '%{public}s', 'Failed to 打开Flutter页面');
             }

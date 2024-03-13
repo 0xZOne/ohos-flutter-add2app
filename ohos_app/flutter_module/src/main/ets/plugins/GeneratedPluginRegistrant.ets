@@ -1,5 +1,6 @@
 import { FlutterPlugin } from '@ohos/flutter_ohos/src/main/ets/embedding/engine/plugins/FlutterPlugin';
 import List from '@ohos.util.List';
+import FlutterBoostPlugin from '@ohos/flutter_boost'
 
 /**
  * Generated file. Do not edit.
@@ -9,6 +10,7 @@ import List from '@ohos.util.List';
 export class GeneratedPluginRegistrant {
   static getPlugins(): List<FlutterPlugin> {
     let pluginList : List<FlutterPlugin> = new List();
+    pluginList.add(new FlutterBoostPlugin());
     return pluginList;
   }
 }
