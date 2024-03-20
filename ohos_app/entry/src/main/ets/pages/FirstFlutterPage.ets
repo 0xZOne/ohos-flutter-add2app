@@ -19,6 +19,56 @@ import { FlutterBoostEntry, FlutterView, FlutterPage } from '@ohos/flutter_modul
 import router from '@ohos.router';
 
 const TAG: string = "xlog-FirstFlutterPage";
+
+@Component
+export struct UCFlutterView {
+  @Prop uri: string;
+  @Prop params: Record<string, Object>;
+
+  private flutterEntry: FlutterBoostEntry | null = null;
+  private flutterView?: FlutterView
+
+  aboutToAppear() {
+    this.flutterEntry = new FlutterBoostEntry(getContext(this), {
+      uri: this.uri,
+      params: this.params,
+    });
+    this.flutterEntry.aboutToAppear();
+    this.flutterView = this.flutterEntry.getFlutterView();
+    hilog.info(0x0000, TAG, `Index(${this.flutterView?.getId()}) aboutToAppear===`);
+  }
+
+  aboutToDisappear() {
+    hilog.info(0x0000, TAG, `Index(${this.flutterView?.getId()}) aboutToDisappear===`);
+    this.flutterEntry?.aboutToDisappear()
+  }
+
+  onPageShow() {
+    hilog.info(0x0000, TAG, `Index(${this.flutterView?.getId()}) onPageShow===`);
+    this.flutterEntry?.onPageShow()
+  }
+  // 1
+  onPageHide() {
+    hilog.info(0x0000, TAG, `Index(${this.flutterView?.getId()}) onPageHide===`);
+    this.flutterEntry?.onPageHide()
+  }
+
+  build() {
+    Stack() {
+      FlutterPage({ viewId: this.flutterView?.getId() })
+    }
+    .onVisibleAreaChange([0.0, 1.0], (isVisible: boolean, currentRatio: number) => {
+      if (isVisible) {
+        setTimeout(() => {
+          this.onPageShow();
+        }, 0);
+      } else {
+        this.onPageHide();
+      }
+    })
+  }
+}
+
 @Entry
 @Component
 struct FirstFlutterPage {
