@@ -26,7 +26,7 @@ export default class EntryAbility extends UIAbility implements FlutterBoostDeleg
   pushFlutterRoute(options: FlutterBoostRouteOptions) {
     hilog.info(0x0000, TAG, '%{public}s', '#pushFlutterRoute: ' + options.getPageName());
     router.pushUrl({
-      url: 'pages/FirstFlutterPage', params: {
+      url: 'pages/FlutterUI', params: {
         uri: options.getPageName(),
         params: options.getArguments(),
       }

@@ -20,13 +20,13 @@
         "name": "default",
         "type": "HarmonyOS",
         "material": {
-          "certpath": "/Users/zero/.ohos/config/default_ohos_app_ni4BKwMMU0eRbaOCSnvDX1yMAvoqEL0f-lvBWg2_GR0=.cer",
-          "storePassword": "0000001BC740D3D6625A80322350EB49FEA561C2C2053FF5DC1D1FB1CAC77C8D059ECF6D74EAC0354DC6EC",
+          "certpath": "/Users/zero/.ohos/config/default_ohos_app_TCZw225T1CldJrv7OlruG9d4iLC4y7wdHC-frixbu3c=.cer",
+          "storePassword": "0000001BD661D5C18ABB5C67DDB6815EC14ED6A69B1C8BCF6FE39259791C51FE223A5BA15090F99D3E84A2",
           "keyAlias": "debugKey",
-          "keyPassword": "0000001B568F24D9EF4D8B2D264E7D24281B12593F36276EE2C7F236271AA3FF2C97A2C8CE5401AF36110A",
-          "profile": "/Users/zero/.ohos/config/default_ohos_app_ni4BKwMMU0eRbaOCSnvDX1yMAvoqEL0f-lvBWg2_GR0=.p7b",
+          "keyPassword": "0000001BED1E6F0A2A6986090897D2571314B6B31BB24CE04EDBC41DB609D08DD3D4754FFD2F99C18B38D4",
+          "profile": "/Users/zero/.ohos/config/default_ohos_app_TCZw225T1CldJrv7OlruG9d4iLC4y7wdHC-frixbu3c=.p7b",
           "signAlg": "SHA256withECDSA",
-          "storeFile": "/Users/zero/.ohos/config/default_ohos_app_ni4BKwMMU0eRbaOCSnvDX1yMAvoqEL0f-lvBWg2_GR0=.p12"
+          "storeFile": "/Users/zero/.ohos/config/default_ohos_app_TCZw225T1CldJrv7OlruG9d4iLC4y7wdHC-frixbu3c=.p12"
         }
       }
     ],

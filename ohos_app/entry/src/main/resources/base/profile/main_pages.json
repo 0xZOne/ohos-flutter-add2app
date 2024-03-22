@@ -1,7 +1,5 @@
 {
   "src": [
-    "pages/Index",
-    "pages/FirstFlutterPage",
-    "pages/NativePage"
+    "pages/Index"
   ]
 }

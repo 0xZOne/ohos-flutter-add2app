@@ -18,10 +18,10 @@ import { FlutterBoostEntry, FlutterView, FlutterPage } from '@ohos/flutter_modul
 
 import router from '@ohos.router';
 
-const TAG: string = "xlog-FirstFlutterPage";
+const TAG: string = "xlog-FlutterUI";
 
 @Component
-export struct UCFlutterView {
+export struct FlutterUIComponent {
   @Prop uri: string;
   @Prop params: Record<string, Object>;
 
@@ -35,21 +35,21 @@ export struct UCFlutterView {
     });
     this.flutterEntry.aboutToAppear();
     this.flutterView = this.flutterEntry.getFlutterView();
-    hilog.info(0x0000, TAG, `Index(${this.flutterView?.getId()}) aboutToAppear===`);
+    hilog.info(0x0000, TAG, 'Component(#%{public}s) aboutToAppear===', this.uri);
   }
 
   aboutToDisappear() {
-    hilog.info(0x0000, TAG, `Index(${this.flutterView?.getId()}) aboutToDisappear===`);
+    hilog.info(0x0000, TAG, 'Component(#%{public}s) aboutToDisappear===', this.uri);
     this.flutterEntry?.aboutToDisappear()
   }
 
   onPageShow() {
-    hilog.info(0x0000, TAG, `Index(${this.flutterView?.getId()}) onPageShow===`);
+    hilog.info(0x0000, TAG, 'Component(#%{public}s) onPageShow===', this.uri);
     this.flutterEntry?.onPageShow()
   }
   // 1
   onPageHide() {
-    hilog.info(0x0000, TAG, `Index(${this.flutterView?.getId()}) onPageHide===`);
+    hilog.info(0x0000, TAG, 'Component(#%{public}s) onPageHide===', this.uri);
     this.flutterEntry?.onPageHide()
   }
 
@@ -71,29 +71,29 @@ export struct UCFlutterView {
 
 @Entry
 @Component
-struct FirstFlutterPage {
+struct FlutterUIPage {
   private flutterEntry: FlutterBoostEntry | null = null;
-  private flutterView?: FlutterView
+  private flutterView?: FlutterView;
 
   aboutToAppear() {
     this.flutterEntry = new FlutterBoostEntry(getContext(this), router.getParams());
     this.flutterEntry.aboutToAppear();
     this.flutterView = this.flutterEntry.getFlutterView();
-    hilog.info(0x0000, TAG, "Index aboutToAppear===");
+    hilog.info(0x0000, TAG, "Page aboutToAppear===");
   }
 
   aboutToDisappear() {
-    hilog.info(0x0000, TAG, "Index aboutToDisappear===");
+    hilog.info(0x0000, TAG, "Page aboutToDisappear===");
     this.flutterEntry?.aboutToDisappear()
   }
 
   onPageShow() {
-    hilog.info(0x0000, TAG, "Index onPageShow===");
+    hilog.info(0x0000, TAG, "Page onPageShow===");
     this.flutterEntry?.onPageShow()
   }
   // 1
   onPageHide() {
-    hilog.info(0x0000, TAG, "Index onPageHide===");
+    hilog.info(0x0000, TAG, "Page onPageHide===");
     this.flutterEntry?.onPageHide()
   }
 

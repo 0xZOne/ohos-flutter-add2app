@@ -1,7 +1,7 @@
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { FlutterBoost } from '@ohos/flutter_module';
 import router from '@ohos.router';
-import { UCFlutterView } from './FirstFlutterPage';
+import { FlutterUIComponent } from './FlutterUI';
 
 const TAG: string = "xlog-Index";
 @Entry
@@ -44,7 +44,6 @@ struct Index {
                 .margin({ bottom: 10 })
                 .onClick(() => {
                   try {
-                    // router.pushUrl({ url: 'pages/FirstFlutterPage' })
                     FlutterBoost.getInstance().open('flutterPage', {})
                   } catch (err) {
                     hilog.info(0x0000, TAG, '%{public}s', 'Failed to 打开Flutter页面');
@@ -66,15 +65,15 @@ struct Index {
         }.tabBar(this.tabBuilder(0, '首页'))
 
         TabContent() {
-          UCFlutterView({ uri: 'flutterPage' })
+          FlutterUIComponent({ uri: 'flutterPage' })
         }.tabBar(this.tabBuilder(1, 'flutterPage'))
 
         TabContent() {
-          UCFlutterView({ uri: 'counter' })
+          FlutterUIComponent({ uri: 'counter' })
         }.tabBar(this.tabBuilder(2, 'counter'))
 
         TabContent() {
-          UCFlutterView({ uri: 'mediaquery' })
+          FlutterUIComponent({ uri: 'mediaquery' })
         }.tabBar(this.tabBuilder(3, 'mediaquery'))
       }
       .vertical(false)
