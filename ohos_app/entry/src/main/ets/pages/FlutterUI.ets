@@ -16,6 +16,7 @@
 import hilog from '@ohos.hilog';
 import { FlutterBoostEntry, FlutterView, FlutterPage } from '@ohos/flutter_module';
 
+import curves from '@ohos.curves';
 import router from '@ohos.router';
 
 const TAG: string = "xlog-FlutterUI";
@@ -26,7 +27,10 @@ export struct FlutterUIComponent {
   @Prop params: Record<string, Object>;
 
   private flutterEntry: FlutterBoostEntry | null = null;
-  private flutterView?: FlutterView
+  private flutterView?: FlutterView;
+  private effect: object =
+    TransitionEffect.OPACITY
+      .combine(TransitionEffect.move(TransitionEdge.END)).animation({curve: curves.springMotion()});
 
   aboutToAppear() {
     this.flutterEntry = new FlutterBoostEntry(getContext(this), {
@@ -66,6 +70,7 @@ export struct FlutterUIComponent {
         this.onPageHide();
       }
     })
+    .transition(this.effect)
   }
 }
 
@@ -74,6 +79,9 @@ export struct FlutterUIComponent {
 struct FlutterUIPage {
   private flutterEntry: FlutterBoostEntry | null = null;
   private flutterView?: FlutterView;
+  private effect: object =
+    TransitionEffect.OPACITY
+      .combine(TransitionEffect.move(TransitionEdge.END)).animation({curve: curves.springMotion()});
 
   aboutToAppear() {
     this.flutterEntry = new FlutterBoostEntry(getContext(this), router.getParams());
@@ -100,6 +108,6 @@ struct FlutterUIPage {
   build() {
     Stack() {
       FlutterPage({ viewId: this.flutterView?.getId() })
-    }
+    }.transition(this.effect)
   }
 }
