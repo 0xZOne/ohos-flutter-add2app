@@ -29,6 +29,6 @@ export {
   FlutterBoostAbility,
   FlutterBoostSetupOptions,
   FlutterBoostSetupOptionsBuilder
-} from '@ohos/flutter_boost';
+} from 'flutter_boost';
 
 export { GeneratedPluginRegistrant } from './src/main/ets/plugins/GeneratedPluginRegistrant';

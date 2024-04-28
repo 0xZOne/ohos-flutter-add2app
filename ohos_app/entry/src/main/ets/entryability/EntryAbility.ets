@@ -50,9 +50,12 @@ export default class EntryAbility extends UIAbility implements FlutterBoostDeleg
     FlutterManager.getInstance().pushWindowStage(this, windowStage);
 
     const optionsBuilder: FlutterBoostSetupOptionsBuilder = new FlutterBoostSetupOptionsBuilder()
-      .setPlugins(GeneratedPluginRegistrant.getPlugins());
-    FlutterBoost.getInstance().setup(this, this.context, () => {
+    FlutterBoost.getInstance().setup(this, this.context, (engine) => {
       hilog.info(0x0000, TAG, '%{public}s', '引擎初始化成功 ~~~');
+
+      // Register plugins
+      GeneratedPluginRegistrant.registerWith(engine);
+
       windowStage.loadContent('pages/Index', (err, data) => {
         if (err.code) {
           hilog.error(0x0000, TAG, 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
