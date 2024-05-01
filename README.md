@@ -60,3 +60,7 @@ ln -s ../ohos_app .ohos
 ### 接入FlutterBoost
 
 FlutterBoost 从4.5.0开始支持鸿蒙，接口与Android基本保持一致，接入方式也类似，详细接入流程请戳👇 [链接](https://github.com/alibaba/flutter_boost/blob/task/4.4.2-support-ohos/docs/install.md#ohos%E9%83%A8%E5%88%86)，或者直接看该示例代码。
+
+## 写在最后
+
+本示例仅仅是为了演示如何将Flutter页面集成到现有的鸿蒙应用中，不会持续更新，例如，这里仍然使用了router而非华为推荐的navigation。
