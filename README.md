@@ -41,35 +41,6 @@ ln -s ../ohos_app .ohos
 ```
 关联宿主工程后，在Flutter模块工程修改Dart代码，然后执行`flutter run`便可以更新宿主工程的flutter_module，例如，将相关的har包拷贝到flutter_module/har/目录。
 
-Flutter鸿蒙社区版本，运行`flutter run`时会删除.ohos并通过模版重新生成目录，导致之前创建的软链接失效。可以通过修改以下代码解决：
-```diff
-diff --git a/packages/flutter_tools/lib/src/project.dart b/packages/flutter_tools/lib/src/project.dart
-index 069e6ee00a..3e51e5a42b 100644
---- a/packages/flutter_tools/lib/src/project.dart
-+++ b/packages/flutter_tools/lib/src/project.dart
-@@ -2,6 +2,7 @@
- // Use of this source code is governed by a BSD-style license that can be
- // found in the LICENSE file.
-
-+import 'dart:io' as io;
- import 'package:meta/meta.dart';
- import 'package:xml/xml.dart';
- import 'package:yaml/yaml.dart';
-@@ -1000,6 +1001,12 @@ class OhosProject extends FlutterProjectPlatform {
-   }
-
-   bool _shouldRegenerateFromTemplate() {
-+    // Do not re-generate .ohos when it already exists and is a symbolic link.
-+    if (ephemeralDirectory.existsSync() &&
-+        io.FileSystemEntity.isLinkSync(ephemeralDirectory.path)) {
-+      return false;
-+    }
-+
-     return globals.fsUtils.isOlderThanReference(
-           entity: ephemeralDirectory,
-           referenceFile: parent.pubspecFile,
-```
-
 ### 鸿蒙宿主工程
 鸿蒙宿主工程中，增加一个Library类型的Module，在主模块中添加依赖：
 ```json
