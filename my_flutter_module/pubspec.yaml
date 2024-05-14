@@ -1,4 +1,4 @@
-name: flutter_module
+name: my_flutter_module
 description: A new Flutter module project.
 
 # The following defines the version and build number for your application.
@@ -30,7 +30,7 @@ dependencies:
   flutter_boost:
     git:
       url: 'https://github.com/alibaba/flutter_boost.git'
-      ref: '4.5.5'
+      ref: '4.5.7'
 
 dev_dependencies:
   flutter_test:
@@ -88,5 +88,5 @@ flutter:
   # identifiers, which may be completely independent or the same as these.
   module:
     androidX: true
-    androidPackage: com.example.add2app.flutter_module
-    iosBundleIdentifier: com.example.add2app.flutterModule
+    androidPackage: com.example.add2app.my_flutter_module
+    iosBundleIdentifier: com.example.add2app.myFlutterModule

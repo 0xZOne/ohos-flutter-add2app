@@ -63,4 +63,4 @@ FlutterBoost 从4.5.0开始支持鸿蒙，接口与Android基本保持一致，�
 
 ## 写在最后
 
-本示例仅仅是为了演示如何将Flutter页面集成到现有的鸿蒙应用中，不会持续更新，例如，这里仍然使用了router而非华为推荐的navigation。
+本示例仅仅是为了演示如何将Flutter页面集成到现有的鸿蒙应用中，更详细的demo请查看FlutterBoost的example目录。

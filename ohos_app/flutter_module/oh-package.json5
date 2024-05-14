@@ -1,12 +1,11 @@
 {
-  name: '@ohos/flutter_module',
-  version: '1.0.0',
-  description: 'Please describe the basic information.',
-  main: 'index.ets',
-  author: '',
-  license: 'OpenValley',
-  dependencies: {
-    '@ohos/flutter_ohos': 'file:./har/flutter.har',
-    flutter_boost: 'file:./har/flutter_boost.har',
-  },
+  "name": "@ohos/flutter_module",
+  "version": "1.0.0",
+  "description": "Please describe the basic information.",
+  "main": "index.ets",
+  "author": "",
+  "license": "OpenValley",
+  "dependencies": {
+    "@ohos/flutter_ohos": "file:../har/flutter.har"
+  }
 }
