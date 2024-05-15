@@ -14,7 +14,8 @@
 */
 
 import hilog from '@ohos.hilog';
-import { FlutterBoostEntry, FlutterView, FlutterPage } from '@ohos/flutter_module';
+import { FlutterBoostEntry } from 'flutter_boost';
+import { FlutterView, FlutterPage } from '@ohos/flutter_ohos';
 
 import curves from '@ohos.curves';
 import router from '@ohos.router';

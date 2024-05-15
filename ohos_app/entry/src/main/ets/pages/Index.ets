@@ -1,5 +1,5 @@
 import { hilog } from '@kit.PerformanceAnalysisKit';
-import { FlutterBoost } from '@ohos/flutter_module';
+import { FlutterBoost } from 'flutter_boost';
 import router from '@ohos.router';
 import { FlutterUIComponent } from './FlutterUI';
 

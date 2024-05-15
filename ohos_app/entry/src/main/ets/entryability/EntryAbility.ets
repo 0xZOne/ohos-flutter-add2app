@@ -4,15 +4,14 @@ import window from '@ohos.window';
 import Want from '@ohos.app.ability.Want';
 import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 import hilog from '@ohos.hilog';
+import { FlutterManager } from '@ohos/flutter_ohos';
+import { GeneratedPluginRegistrant } from 'flutter_module';
 import {
-  FlutterManager,
   FlutterBoost,
   FlutterBoostDelegate,
   FlutterBoostRouteOptions,
-  FlutterBoostSetupOptionsBuilder,
-  GeneratedPluginRegistrant
-} from '@ohos/flutter_module';
-
+  FlutterBoostSetupOptionsBuilder
+} from 'flutter_boost'
 import router from '@ohos.router';
 
 const TAG: string = "xlog-EntryAbility";

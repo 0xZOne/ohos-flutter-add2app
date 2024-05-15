@@ -13,22 +13,4 @@
 * limitations under the License.
 */
 
-export {
-  FlutterAbility,
-  FlutterEntry,
-  FlutterManager,
-  FlutterPage,
-  FlutterView,
-} from '@ohos/flutter_ohos'
-
-export {
-  FlutterBoost,
-  FlutterBoostDelegate,
-  FlutterBoostEntry,
-  FlutterBoostRouteOptions,
-  FlutterBoostAbility,
-  FlutterBoostSetupOptions,
-  FlutterBoostSetupOptionsBuilder
-} from 'flutter_boost';
-
 export { GeneratedPluginRegistrant } from './src/main/ets/plugins/GeneratedPluginRegistrant';
