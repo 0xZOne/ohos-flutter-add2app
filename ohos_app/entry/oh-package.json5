@@ -21,7 +21,7 @@
   "author": "",
   "license": "",
   "dependencies": {
-    'flutter_module': '../flutter_module',
+    'flutter_module': '../modules/flutter_module',
     'flutter_boost': 'file:../har/flutter_boost.har',
     '@ohos/flutter_ohos': 'file:../har/flutter.har'
   }

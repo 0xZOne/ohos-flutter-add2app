@@ -26,7 +26,7 @@
     },
     {
       "name": "flutter_module",
-      "srcPath": "./flutter_module",
+      "srcPath": "./modules/flutter_module",
       "targets": [
         {
           "name": "default",
